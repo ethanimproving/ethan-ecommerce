@@ -91,6 +91,14 @@ Refactoring
 * [Read this later](https://dasunpubudu.wordpress.com/2018/04/17/deploying-spring-angular-mast-stack-application-in-heroku/)
 * [Deploy Spring and Angular to same Heroku](https://stackoverflow.com/questions/44831611/spring-boot-angular-2-heroku-deployment)
 
+### Automatically build Angular to static folder
+
+Open `angular.json` and replace the `outputPath`:
+```
+"outputPath": "../src/main/resources/static",
+```
+
+Then edit the Procfile
 
 ## ng generate Command
 
@@ -122,3 +130,24 @@ ng g module environments/environment
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+# MySQLEcommerce
+
+This app is hosted at https://app.infinityfree.net/
+
+# Heroku
+
+[Instructions](https://devcenter.heroku.com/articles/deploying-spring-boot-apps-to-heroku)
+
+```powershell
+$ heroku login
+$ heroku create
+$ heroku apps:rename emiller-ecommerce
+$ git push heroku master
+$ heroku open
+$ heroku logs --tail
+
+# Attach a databse
+$ heroku addons:create heroku-postgresql
+$ heroku config
+```
